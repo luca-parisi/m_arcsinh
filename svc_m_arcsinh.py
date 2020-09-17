@@ -1,4 +1,10 @@
-# The modified arcsinh or 'm-arcsinh' as a custom kernel for the SVC class in scikit-learn
+"""Additional utility for the 'SVC' class in the SVM module in scikit-learn"""
+
+# The modified arcsinh or 'm-arcsinh' as a custom kernel function
+
+# Author: Luca Parisi <luca.parisi@ieee.org>
+
+import numpy as np
 
 def m_arcsinh(data, Y):
     """Compute a modified arcsinh (m-arcsinh) hyperbolic function 
