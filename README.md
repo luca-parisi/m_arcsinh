@@ -16,14 +16,16 @@ As it is compatible with scikit-learn, please note the [dependencies of scikit-l
 
 You can use the m-arcsinh function as a custom:
 
-* [kernel function](https://github.com/luca-parisi/m_arcsinh_scikit_learn/blob/master/svc_m_arcsinh.py) in the 'SVC' class in scikit learn as follows:
+* [kernel function](https://github.com/luca-parisi/m_arcsinh_scikit_learn/blob/master/svc_m_arcsinh.py) in the 'SVC' class in scikit learn as per the following two steps:
 
-    1. defining the function 'm_arcsinh' as per the ['svc_m_arcsinh.py' file in this repository]([kernel function](https://github.com/luca-parisi/m_arcsinh_scikit_learn/blob/master/svc_m_arcsinh.py) or as follows: 
+    1. defining the kernel function 'm_arcsinh' as per the ['svc_m_arcsinh.py' file in this repository](https://github.com/luca-parisi/m_arcsinh_scikit_learn/blob/master/svc_m_arcsinh.py) or as follows: 
         
         import numpy as np
         
         def m_arcsinh(data, Y):
-           return np.dot((1/3*np.arcsinh(data))*(1/4*np.sqrt(np.abs(data))), (1/3*np.arcsinh(Y.T))*(1/4*np.sqrt(np.abs(Y.T))))
+
+              return np.dot((1/3*np.arcsinh(data))*(1/4*np.sqrt(np.abs(data))), (1/3*np.arcsinh(Y.T))*(1/4*np.sqrt(np.abs(Y.T))))
+   
     2. after importing the relevant 'svm' class from scikit-learn:  
         
        * from sklearn import svm 
