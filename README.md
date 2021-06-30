@@ -47,4 +47,6 @@ You can use the m-arcsinh function as a custom:
 
 ### Citation request
 
-If you are using this function, please cite the paper by **[Parisi, L., 2020](https://arxiv.org/abs/2009.07530)** as follows: **arXiv:2009.07530 [cs.LG]**.
+If you are using this function, please cite the papers by:
+* **[Parisi, L., 2020](https://arxiv.org/abs/2009.07530)**.
+* **[Parisi, L. et al., 2021](https://www.naun.org/main/NAUN/mcs/2021/a142002-007(2021).pdf)**.
