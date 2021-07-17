@@ -1,16 +1,17 @@
-# m-arcsinh in scikit-learn
-## An Efficient and Reliable Kernel and Activation Function for Support Vector Machine (SVM) and Multi-Layer Perceptron (MLP)
+# m-arcsinh in scikit-learn, TensorFlow, and Keras
+## An Efficient and Reliable Kernel and Activation Function for Support Vector Machine (SVM) and Shallow Neural Networks
 
 
-The modified 'arcsinh' or **'m_arcsinh'** is a Python custom kernel and activation function available for the Support Vector Machine (SVM) implementation for classification ['SVC'](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html) and Multi-Layer Perceptron (MLP) or ['MLPClassifier'](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html) classes in scikit-learn for Machine Learning-based classification. It is distributed under the [CC BY 4.0 license](http://creativecommons.org/licenses/by/4.0/).
+The modified 'arcsinh' or **'m_arcsinh'** is a Python custom kernel and activation function available for the Support Vector Machine (SVM) implementation for classification ['SVC'](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html) and Multi-Layer Perceptron (MLP) or ['MLPClassifier'](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html) classes in scikit-learn for Machine Learning-based classification. Furthermore, for the same purpose, it is also available as a Python custom activation function for shallow neural networks in TensorFlow and Keras. It is distributed under the [CC BY 4.0 license](http://creativecommons.org/licenses/by/4.0/).
 
-Details on this function, implementation and validation against gold standard kernel and activation functions for SVM and MLP respectively are available at the following: **[Parisi, L., 2020](https://arxiv.org/abs/2009.07530)**. 
+Details on this function, implementation and validation against gold standard kernel and activation functions for SVM and MLP respectively are available at the following: **[Parisi, L., 2020](https://arxiv.org/abs/2009.07530)**.
 
 
 ### Dependencies
 
-As it is compatible with scikit-learn, please note the [dependencies of scikit-learn](https://github.com/scikit-learn/scikit-learn) to be able to use the 'm-arcsinh' function in the 'SVC' and 'MLPClassifier' classes.
+* For the **scikit-learn version** of the m-arcsinh: As it is compatible with scikit-learn, please note the [dependencies of scikit-learn](https://github.com/scikit-learn/scikit-learn) to be able to use the 'm-arcsinh' function in the 'SVC' and 'MLPClassifier' classes.
 
+* For the **TensorFlow and Keras versions** of the m-arcsinh: Also developed in Python 3.6, compatible with TensorFlow (versions tested: 1.12 and 1.15) and Keras, please note the dependencies of TensorFlow (v1.12 or 1.15) and Keras to be able to use the 'm-arcsinh' activation function in shallow neural networks.
 
 ### Usage
 
@@ -35,7 +36,7 @@ You can use the m-arcsinh function as a custom:
         classifier = svm.SVC(kernel=m_arcsinh, gamma=0.001, random_state=13, class_weight='balanced')
         ```
         
-* [activation function](https://github.com/luca-parisi/m_arcsinh_scikit_learn/blob/master/mlpclassifier_m_arcsinh.py) in the 'MLPClassifier' class in scikit learn as per the following two steps:
+* [activation function](https://github.com/luca-parisi/m_arcsinh_scikit_learn/blob/master/mlpclassifier_m_arcsinh.py) in the 'MLPClassifier' class in scikit-learn as per the following two steps:
 
     1. updating the 'base.py' file under your local installation of scikit-learn (sklearn/neural_network/_base.py), similarly to this [commit](https://github.com/scikit-learn/scikit-learn/pull/18419/commits/3e1141dc3448615018888e8da07622452b092f4f), including the m-arcsinh in the 'ACTIVATIONS' dictionary
     2. after importing the relevant 'MLPClassifier' class from scikit-learn, you can use the 'm_arcsinh' as any other activation functions within it:
@@ -44,6 +45,15 @@ You can use the m-arcsinh function as a custom:
        from sklearn.neural_network import MLPClassifier
        classifier =  MLPClassifier(activation='m_arcsinh', random_state=1, max_iter=300)
      ```
+
+* activation function in shallow neural networks in Keras as a layer:
+
+    ```python
+       number_of_classes = 10
+       model.add(keras.layers.Dense(128))
+       model.add(m_arcsinh())
+       model.add(keras.layers.Dense(number_of_classes))
+    ```
 
 ### Citation request
 
