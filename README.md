@@ -52,7 +52,7 @@ You can use the m-arcsinh function as a custom:
        classifier =  MLPClassifier(activation='m_arcsinh', random_state=1, max_iter=300)
      ```
 
-* activation function in shallow neural networks in Keras as a layer:
+* [activation function](https://github.com/luca-parisi/m-arcsinh_scikit-learn_TensorFlow_Keras/blob/master/m_arcsinh_TensorFlow_Keras.py) in shallow neural networks in Keras as a layer:
 
     ```python
        number_of_classes = 10
