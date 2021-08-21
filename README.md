@@ -1,5 +1,5 @@
 # m-arcsinh in scikit-learn, TensorFlow, and Keras
-## A Reliable and Efficient Function for Supervised Learning and Feature Extraction
+## A Reliable and Efficient Function for Supervised Machine Learning and Feature Extraction
 
 
 The modified 'arcsinh' or **'m_arcsinh'** is a Python custom kernel and activation function available for the Support Vector Machine (SVM) implementation for classification ['SVC'](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html) and Multi-Layer Perceptron (MLP) or ['MLPClassifier'](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html) classes in scikit-learn for Machine Learning-based classification. For the same purpose, it is also available as a Python custom activation function for shallow neural networks in TensorFlow and Keras.
