@@ -23,9 +23,9 @@ Details on this function, implementation and validation are available at the fol
 
 You can use the m-arcsinh function as a custom:
 
-* [kernel function](https://github.com/luca-parisi/m_arcsinh_scikit_learn/blob/master/svc_m_arcsinh.py) in the 'SVC' class in scikit learn as per the following two steps:
+* [kernel function](https://github.com/luca-parisi/m-arcsinh_scikit-learn_TensorFlow_Keras/blob/master/m_arcsinh_for_svc_sklearn.py) in the 'SVC' class in scikit learn as per the following two steps:
 
-    1. defining the kernel function 'm_arcsinh' as per the ['svc_m_arcsinh.py' file in this repository](https://github.com/luca-parisi/m_arcsinh_scikit_learn/blob/master/svc_m_arcsinh.py) or as follows: 
+    1. defining the kernel function 'm_arcsinh' as per the ['svc_m_arcsinh.py' file in this repository](https://github.com/luca-parisi/m-arcsinh_scikit-learn_TensorFlow_Keras/blob/master/m_arcsinh_for_svc_sklearn.py) or as follows: 
     
        ```python
         import numpy as np
@@ -42,7 +42,7 @@ You can use the m-arcsinh function as a custom:
         classifier = svm.SVC(kernel=m_arcsinh, gamma=0.001, random_state=13, class_weight='balanced')
         ```
         
-* [activation function](https://github.com/luca-parisi/m_arcsinh_scikit_learn/blob/master/mlpclassifier_m_arcsinh.py) in the 'MLPClassifier' class in scikit-learn, as per the following two steps:
+* [activation function](https://github.com/luca-parisi/m-arcsinh_scikit-learn_TensorFlow_Keras/blob/master/m_arcsinh_for_mlpclassifier_sklearn.py) in the 'MLPClassifier' class in scikit-learn, as per the following two steps:
 
     1. updating the '\_base.py' file under your local installation of scikit-learn (sklearn/neural_network/\_base.py), as this [commit](https://github.com/scikit-learn/scikit-learn/pull/18419/commits/3e1141dc3448615018888e8da07622452b092f4f), including the m-arcsinh in the 'ACTIVATIONS' dictionary
     2. after importing the relevant 'MLPClassifier' class from scikit-learn, you can use the 'm_arcsinh' as any other activation functions within it:
@@ -61,7 +61,7 @@ You can use the m-arcsinh function as a custom:
        model.add(keras.layers.Dense(number_of_classes))
     ```
 
-* [G function](https://github.com/luca-parisi/m_arcsinh_scikit_learn/blob/master/mlpclassifier_m_arcsinh.py) to improve FastICA-based feature extraction via the m-ar-K-FastICA approach in the 'FastICA' class in scikit-learn, as per the following two steps:
+* [G function](https://github.com/luca-parisi/m-arcsinh_scikit-learn_TensorFlow_Keras/blob/master/_fastica.py) to improve FastICA-based feature extraction via the m-ar-K-FastICA approach in the 'FastICA' class in scikit-learn, as per the following two steps:
 
     1. updating the '\_fastica.py' file under your local installation of scikit-learn (sklearn/decomposition/\_fastica.py), as this [file](https://github.com/luca-parisi/m-arcsinh_scikit-learn_TensorFlow_Keras/blob/master/_fastica.py), including the m-arcsinh as a G function ('fun') for the 'FastICA' class
     2. after importing the relevant 'FastICA' class from scikit-learn, you can use the 'm_arcsinh' as any other G functions within it:
