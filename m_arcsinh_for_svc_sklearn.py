@@ -6,6 +6,7 @@
 
 import numpy as np
 
+
 def m_arcsinh(data, Y):
     """Compute a modified arcsinh (m-arcsinh) hyperbolic function 
 	in place.
