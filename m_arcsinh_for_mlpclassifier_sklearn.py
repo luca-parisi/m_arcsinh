@@ -10,11 +10,13 @@ import numpy as np
 def m_arcsinh(X):
     """Compute a modified arcsinh (m-arcsinh) hyperbolic function 
 	in place.
+
     Further details on this function are available at:  
     https://arxiv.org/abs/2009.07530 
     (Parisi, L., 2020; License: http://creativecommons.org/licenses/by/4.0/). 
     If you are using this function, please cite this paper as follows: 
     arXiv:2009.07530 [cs.LG].
+    
     Parameters
     ----------
     X : {array-like, sparse matrix}, shape (n_samples, n_features)
@@ -27,11 +29,13 @@ def inplace_m_arcsinh_derivative(Z, delta):
     """Apply the derivative of the hyperbolic m-arcsinh function.
     It exploits the fact that the derivative is a relatively 
     simple function of the output value from hyperbolic m-arcsinh.
+    
     Further details on this function are available at:  
     https://arxiv.org/abs/2009.07530 
     (Parisi, L., 2020; License: http://creativecommons.org/licenses/by/4.0/). 
     If you are using this function, please cite this paper as follows: 
     arXiv:2009.07530 [cs.LG].
+    
     Parameters
     ----------
     Z : {array-like, sparse matrix}, shape (n_samples, n_features)
