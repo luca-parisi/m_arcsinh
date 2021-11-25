@@ -6,6 +6,7 @@
 
 import numpy as np
 
+
 def m_arcsinh(X):
     """Compute a modified arcsinh (m-arcsinh) hyperbolic function 
 	in place.
@@ -21,6 +22,7 @@ def m_arcsinh(X):
     """
     return (1/3*np.arcsinh(X))*(1/4*np.sqrt(np.abs(X)))
     
+	
 def inplace_m_arcsinh_derivative(Z, delta):
     """Apply the derivative of the hyperbolic m-arcsinh function.
     It exploits the fact that the derivative is a relatively 
