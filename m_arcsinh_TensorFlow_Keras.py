@@ -10,7 +10,6 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras.layers import Layer
 
-
 # m-arcsinh as a custom activation function in TensorFlow
 
 '''
@@ -39,6 +38,7 @@ def m_arcsinh_grad(op, grad):
     n_gr = tf_d_m_arcsinh(x)
     return grad * n_gr
 
+
 def py_func(func, inp, Tout, stateful=True, name=None, grad=None):
 # Generating a unique name to avoid duplicates
     rnd_name = 'PyFuncGrad' + str(np.random.randint(0, 1E+2))
@@ -49,17 +49,19 @@ def py_func(func, inp, Tout, stateful=True, name=None, grad=None):
         
 np_m_arcsinh_32 = lambda x: np_m_arcsinh(x).astype(np.float32)
 
+
 def tf_m_arcsinh(x,name=None):
     with tf.name_scope(name, "m_arcsinh", [x]) as name:
-        y = py_func(np_m_arcsinh_32,   # forward pass function
+        y = py_func(np_m_arcsinh_32,  # forward pass function
                         [x],
                         [tf.float32],
                         name=name,
-                         grad= m_arcsinh_grad) # The function that overrides gradient
-        y[0].set_shape(x.get_shape())     # Specify input rank
+                         grad= m_arcsinh_grad)  # The function that overrides gradient
+        y[0].set_shape(x.get_shape())  # Specify input rank
         return y[0]
 
 np_d_m_arcsinh_32 = lambda x: np_d_m_arcsinh(x).astype(np.float32)
+
 
 def tf_d_m_arcsinh(x,name=None):
     with tf.name_scope(name, "d_m_arcsinh", [x]) as name:
